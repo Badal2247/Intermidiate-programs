@@ -1,6 +1,9 @@
 import java.util.*;
 public class Main {
 	static Scanner sc=new Scanner(System.in);
+	
+	                                                            //Sum of element.
+	
 	public static void sumofele() {
 
 		System.out.println("Enter the size of your array: ");
@@ -18,6 +21,10 @@ public class Main {
 		}
 		System.out.println("Your sum of element: "+sum);
 	}
+	
+	                                                            //Max/Min element.
+	
+	
 	public static void maxminele() {
 
 		System.out.println("Enter the size of your array: ");
@@ -36,6 +43,7 @@ public class Main {
 		}
 		if(n==1) {
 			System.out.println(arr[0]+" is the only element.");
+			return;
 		}
 		for(int i=1; i<n; i++) {
 			if(arr[i]>max) {
@@ -48,6 +56,9 @@ public class Main {
 		System.out.println("Min element in your array: "+min);
 
 	}
+	
+	                                                           //Reverse array
+	
 	public static void reversearray() {
 		System.out.println("Enter the size of your array: ");
 		int n=sc.nextInt();
@@ -74,6 +85,24 @@ public class Main {
 			System.out.print(x+" ");
 		}
 	}
+	
+	                                            //Method to check prime.
+	
+	public static boolean isprime(int n){
+	    if(n<=1){
+	        return false;
+	    }
+	    int limit= (int)Math.sqrt(n);
+	    for(int i=2;i<=limit;i++){
+	        if(n%i==0){
+	            return false;
+	        }
+	    }
+	    return true;
+	}
+	
+	                                                            //Number Checking
+	
 	public static void numcheck() {
 		System.out.println("Enter your size of array: ");
 		int n=sc.nextInt();
@@ -81,13 +110,18 @@ public class Main {
 		for(int i=0; i<n; i++) {
 			System.out.println("Enter your element "+(i+1)+":");
 			arr[i]=sc.nextInt();
-		}
-		int odd=0,even=0,positive=0,neg=0,zeros=0;
+		}System.out.println("Your prime numbers:- ");
+		int odd=0,even=0,positive=0,neg=0,zeros=0,prime=0;
 		for(int x:arr) {
 			if(x%2==0) {
 				even++;
 			} else if(x%2!=0) {
 				odd++;
+			}
+			
+			if(isprime(x)==true){
+			    System.out.println(x);
+			    prime++;
 			}
 			if(x>0) {
 				positive++;
@@ -103,8 +137,12 @@ public class Main {
 		System.out.println("Positive: "+positive);
 		System.out.println("Zeros: "+zeros);
 		System.out.println("Negative: "+neg);
+		System.out.println("Prime: "+prime);
 
 	}
+	
+	                                                            //Searching an element.
+	
 	public static void search(){
 	    System.out.println("Enter your size of array: ");
 		int n=sc.nextInt();
@@ -128,6 +166,9 @@ public class Main {
 		}
 		
 	}
+	
+	                                                           //Descending short
+	
 	public static void descendingshort(){
 	    System.out.println("Enter your size of array: ");
 		int n=sc.nextInt();
@@ -156,6 +197,9 @@ public class Main {
 		    System.out.print(x+" ");
 		}
 	}
+	
+	                                                           //Ascending short
+	
 	public static void ascendingshort(){
 	    System.out.println("Enter your size of array: ");
 		int n=sc.nextInt();
@@ -186,8 +230,12 @@ public class Main {
 	}
 
 
-	//Function Call section
+	                                                        
+	                                                        //Function Call section
+	
+	
 	public static void main(String[] args) {
+	    
 	    char ans;
 	    do{
 	    
@@ -246,3 +294,5 @@ public class Main {
 	        
 	    
 	}
+
+
