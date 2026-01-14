@@ -115,10 +115,16 @@ public class Main {
 		}
 		System.out.println("Enter your number: ");
 		int num=sc.nextInt();
+		boolean flag=true;
 		for(int i=0;i<n;i++){
 		    if(arr[i]==num){
 		        System.out.println(num+" found at index: "+i);
+		    }else{
+		        flag=false;
 		    }
+		}
+		if(flag==false){
+		    System.out.println("Number not found.");
 		}
 		
 	}
@@ -163,12 +169,15 @@ public class Main {
 		    System.out.print(x+" ");
 		}
 		for(int i=0;i<n-1;i++){
-		    if(arr[i]>arr[i+1]){
-		        int temp=arr[i+1];
-		        arr[i+1]=arr[i];
-		        arr[i]=temp;
+		    for(int j=i+1;j<n;j++){
+		        if(arr[i]>arr[j]){
+		            int temp=arr[i];
+		            arr[i]=arr[j];
+		            arr[j]=temp;
+		        }
 		    }
 		}
+		
 		System.out.println();
 		System.out.println("Ascending array: ");
 		for(int x: arr){
@@ -179,6 +188,61 @@ public class Main {
 
 	//Function Call section
 	public static void main(String[] args) {
-	    ascendingshort();
+	    char ans;
+	    do{
+	    
+	    System.out.println("=================================================================");
+	    System.out.println();
+	    System.out.println("1. Sum of element. ");
+	    System.out.println("2. Max/Min element in array.");
+	    System.out.println("3. Reverse an array.");
+	    System.out.println("4. Num check. ");
+	    System.out.println("5. Search an element. ");
+	    System.out.println("6. Descending array.");
+	    System.out.println("7. Ascending array. ");
+	    System.out.println();
+	    
+	    System.out.println();
+	    
+	    System.out.println();
+	    System.out.println("==================================================================");
+	    System.out.println();
+	    System.out.println("Enter the operation to do: ");
+	    int choice=sc.nextInt();
+	    
+	    switch(choice){
+	        case 1: sumofele();
+	        break;
+	        
+	        case 2: maxminele();
+	        break;
+	        
+	        case 3: reversearray();
+	        break;
+	        
+	        case 4: numcheck();
+	        break;
+	        
+	        case 5: search();
+	        break;
+	        
+	        case 6: descendingshort();
+	        break;
+	        
+	        case 7: ascendingshort();
+	        break;
+	        
+	        default:
+	        System.out.println("Enter a valid choice.");
+	    }
+	    
+	    System.out.println();
+	    System.out.println("Do you want to continue the program(y/n): ");
+	    ans=sc.next().toLowerCase().charAt(0);
+	    }while(ans=='y');
+	    System.out.println("***********Come again soon**********");
+	    
+	    }
+	        
+	    
 	}
-}
